@@ -240,10 +240,9 @@
                     (set-cdr! (cdr n1) (cadr n1))
                     (set-car! (cdr n1) n))
                   (set-cdr! (cdr n1) n))
-                (when (< v0 v)
+                (unless (= v0 v)
                   (set-cdr! (car n1)
-                    (if (< (level-right n1) v) v
-                      (max (cdaadr n1) (1+ v))))))
+                    (1+ (level-right n1)))))
               n1)]))))
   lh)
 
